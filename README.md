@@ -52,7 +52,7 @@ ADMIN_USER_SECRET=<<string>>
 
     -   `51`: `Session Generate Failure`
 
-    -   `52: ` `Session Destory Failure`
+    -   `52`: `Session Destory Failure`
 
 ## LICENSE
 
