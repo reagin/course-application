@@ -1,0 +1,313 @@
+.asidebar {
+	width: 20vw;
+	height: 100vh;
+	align-self: flex-start;
+}
+
+.asidebar > .fixedbox {
+	width: 20vw;
+	height: 100%;
+	padding: 10px;
+	display: flex;
+	position: fixed;
+	align-items: center;
+	flex-direction: column;
+	user-select: none;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 20px -20px rgba(255, 255, 255, 0.5);
+	border-radius: 0px 10px 10px 0px;
+}
+
+.fixedbox > .users {
+	flex: 3;
+	width: 100%;
+	padding: 10px;
+	position: relative;
+}
+
+.fixedbox > .grade {
+	flex: 4;
+	width: 100%;
+	padding: 10px;
+	position: relative;
+}
+
+.fixedbox > .btncontainer {
+	flex: 3;
+	width: 100%;
+	padding: 10px;
+	position: relative;
+}
+
+.users {
+	font-size: 1em;
+	font-weight: 500;
+	color: #162938;
+}
+
+.users span {
+	cursor: pointer;
+}
+
+.users .avatar img {
+	width: 10vw;
+	margin: auto;
+	display: block;
+	border-radius: 50%;
+}
+
+.users .user-info {
+	margin: 10px 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.users .secret-info {
+	margin: 10px 0;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.users .set-info {
+	margin: 10px 0;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.users .set-info div:not(:first-child) {
+	margin-left: 15px;
+}
+
+.grade {
+	display: flex;
+	font-size: 1em;
+	font-weight: 500;
+	align-items: center;
+	justify-content: center;
+}
+
+.grade select {
+	width: 80%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 1em;
+	font-weight: 500;
+	text-align: center;
+	padding: 0 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	background: transparent;
+}
+
+.grade select option:nth-child(odd) {
+	background-color: rgba(125, 125, 125, 0.5);
+}
+
+.grade select option:nth-child(even) {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.grade select option.createitem {
+	background-color: rgba(0, 255, 0, 0.5);
+}
+
+.grade select option.renameitem {
+	background-color: rgba(0, 0, 255, 0.5);
+}
+
+.grade select option.removeitem {
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.btncontainer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+}
+
+.btncontainer div {
+	width: 100%;
+	height: 30px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+}
+
+.btncontainer div:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.btn-change {
+	background-color: #00c9a7;
+}
+
+.btn-logout {
+	background-color: #fbeaff;
+}
+
+.btn-unregister {
+	background-color: #ff8066;
+}
+
+.btn-reset {
+	background-color: #c34a36;
+}
+
+/* #NOTE 分界线 #NOTE */
+
+.classtable {
+	width: 80vw;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 20px -20px rgba(255, 255, 255, 0.5);
+	border-radius: 10px 0px 0px 10px;
+}
+
+.classtable table {
+	width: 100%;
+	height: 100%;
+	align-self: flex-start;
+	text-align: center;
+	user-select: none;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+table th {
+	font-size: 1em;
+	font-weight: 700;
+	pointer-events: none;
+	background-color: rgba(255, 255, 255, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+table thead th {
+	padding: 10px;
+}
+
+.usertable thead th:first-child {
+	width: 5%;
+	background-color: transparent;
+}
+
+.usertable tbody th {
+	writing-mode: vertical-lr;
+}
+
+.usertable td {
+	height: 30px;
+	cursor: pointer;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.usertable td div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.usertable .btn-addclass:hover::after {
+	content: "+";
+	top: 50%;
+	left: 50%;
+	font-size: 2em;
+	font-weight: 700;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+
+.usertable .btn-class .class-info {
+	display: flex;
+	font-size: 0.8em;
+	font-weight: 500;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+.admin td {
+	height: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.admin td:last-child {
+	cursor: pointer;
+}
+
+.admin td:not(:last-child) {
+	pointer-events: none;
+}
+
+.admin td div {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.admin td div span {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* #NOTE 输入样式 #NOTE */
+.swal-input {
+	width: 100%;
+	height: auto;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+}
+
+.swal-input > .swal-inputbox {
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.swal-input > .swal-inputbox label {
+	width: 40%;
+	height: 100%;
+	display: flex;
+	color: #162938;
+	font-size: 1em;
+	font-weight: 500;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.swal-input > .swal-inputbox input {
+	width: 60%;
+	height: 30px;
+	border: none;
+	outline: none;
+	color: #162938;
+	font-size: 1em;
+	font-weight: 500;
+	padding: 0 5px 0 5px;
+	border-bottom: solid 2px rgba(0, 0, 0, 0.5);
+}

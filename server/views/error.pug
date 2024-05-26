@@ -1,0 +1,12 @@
+extends ./layout/layout.pug
+
+append styles 
+    link(rel="stylesheet", href="/public/styles/error.css")
+
+append content 
+    .wrapper 
+        .message 
+            span.icon: ion-icon(name="bug")
+            p Error Page!
+        .backhome 
+            a.btn(href="/") Back To Home

@@ -1,0 +1,93 @@
+extends ./layout/layout.pug
+
+append styles 
+    link(rel="stylesheet" href="/public/styles/info.css")
+
+append modules 
+    script(src="/public/scripts/info.js") 
+
+append content
+    .asidebar  
+        .fixedbox
+            .users 
+                .avatar
+                    img(src=`${avatarurl}`, alt="avatar")
+                .user-info 
+                    .name-sex 
+                        span.username= `${username}`
+                        label= ' · '
+                        span.sex= `${sex}`
+                    span.email= `${email}`
+                .secret-info 
+                    label Secret: #[span.secretcode= `${secretcode}`]
+                unless isAdmin 
+                    .set-info
+                        .anuminfo
+                            label AM: #[span.anum= `${classnum.anum}`]
+                        .pnuminfo
+                            label PM: #[span.pnum= `${classnum.pnum}`]
+                        .nnuminfo
+                            label NM: #[span.nnum= `${classnum.nnum}`]
+            unless isAdmin 
+                .grade
+                    label= 'Current: '
+                    select(name="gradename")
+                        each item in gradeItems 
+                            option(value=item, selected= item===currentGrade ? true : false)= item 
+                        option.createitem(value="create", selected= currentGrade ? false : true) Create Grade
+                        if currentGrade
+                            option.renameitem(value="rename")  Rename Grade 
+                            option.removeitem(value="remove")  Remove Grade 
+            .btncontainer
+                .btn-logout 
+                    span= 'Logout'
+                .btn-change 
+                    span= 'Change Password'
+                if (!isAdmin)
+                    .btn-unregister
+                        span= 'Unregister'
+                if (isAdmin)
+                    .btn-reset
+                        span= 'Reset Database'
+    .classtable
+        if (!isAdmin)
+            table.usertable
+                thead 
+                    each item in  ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                        th(scope="col")= `${item}`
+                tbody.am-body 
+                    - for (let index=1; index<=classnum.anum; index++)
+                        tr
+                            - if (index===1)
+                                th(rowspan=classnum.anum)= 'Forenoon'
+                            - for (let item=1; item<=7; item++)
+                                td(value= `[${item},${index}]`)
+                                    .btn-addclass
+                tbody.pm-body 
+                    - for (let index=1; index<=classnum.pnum; index++)
+                        tr
+                            - if (index===1)
+                                th(rowspan=classnum.pnum)= 'Afternoon'
+                            - for (let item=1; item<=7; item++)
+                                td(value= `[${item},${index+classnum.anum}]`)
+                                    .btn-addclass
+                tbody.nm-body 
+                    - for (let index=1; index<=classnum.nnum; index++)
+                        tr
+                            - if (index===1)
+                                th(rowspan=classnum.nnum)= 'Evening'
+                            - for (let item=1; item<=7; item++)
+                                td(value= `[${item},${index+classnum.anum+classnum.pnum}]`)
+                                    .btn-addclass
+        else
+            table.admin
+                thead 
+                    each item in  ['Username', 'E-mail', 'Created', 'Action']
+                        th(scope="col")= `${item}`
+                tbody
+                    each item in userItems
+                        tr(value= item.email)
+                            td= item.username
+                            td= item.email
+                            td= new Date(item.created).toLocaleString().split(/\s/)[0]
+                            td #[div.btn-delete #[span.btn-content Delete]]

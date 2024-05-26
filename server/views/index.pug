@@ -1,0 +1,65 @@
+extends ./layout/layout.pug
+
+append styles 
+    link(rel="stylesheet", href="/public/styles/index.css")
+
+append modules 
+    script(src="/public/scripts/index.js") 
+
+append content
+    .wrapper 
+        .form-box.forgot
+            h2 Forgot
+            form(action='/api/forgot' method='post' id='form-forgot')
+                .form-group
+                    span.icon: ion-icon(name="mail")
+                    input.input-email(type='email', name='email' placeholder="" required)
+                    label= 'Email'
+                .form-group
+                    span.icon: ion-icon(name="lock-open")
+                    input.input-secret(type='text', name='secret' placeholder="" required)
+                    label= 'Password'
+                .form-group
+                    span.icon: ion-icon(name="key")
+                    input.input-code(type='text', name='code' placeholder="" required)
+                    label= 'Code'
+                button.btn-submit(type='submit') Submit 
+                .forgot-login-register 
+                    p Remembered password? #[a.forgot-login(href="javascript:void(0)") Login]
+        .form-box.login 
+            h2 Login 
+            form(action='/api/login' method='post' id='form-login')
+                .form-group
+                    span.icon: ion-icon(name="mail")
+                    input.input-email(type='email', name='email' placeholder="" required)
+                    label= 'Email'
+                .form-group
+                    span.icon.icon-lock: ion-icon(name="lock-closed")
+                    input.input-secret(type='password', name='secret' placeholder="" required)
+                    label= 'Password'
+                .remember-forgot 
+                    label #[input.input-rememberme(type="checkbox", name='rememberme')]Remember me
+                    a.login-forgot(href="javascript:void(0)") Forgot Password?
+                button.btn-submit(type='submit') Login 
+                .forgot-login-register 
+                    p Don't have an account? #[a.login-register(href="javascript:void(0)") Register]
+        .form-box.register 
+            h2 Registration   
+            form(action='/api/register' method='post' id='form-register')
+                .form-group
+                    span.icon: ion-icon(name="person-circle")
+                    input.input-username(type='text', name='username' placeholder="" required)
+                    label= 'Username'
+                .form-group
+                    span.icon: ion-icon(name="mail")
+                    input.input-email(type='email', name='email' placeholder="" required)
+                    label= 'Email'
+                .form-group
+                    span.icon: ion-icon(name="lock-open")
+                    input.input-secret(type='text', name='secret' placeholder="" required)
+                    label= 'Password'
+                .remember-forgot 
+                    label #[input.input-agree(type="checkbox", required)]I agree to the terms & conditions
+                button.btn-submit(type='submit') Register 
+                .forgot-login-register 
+                    p Already have an account? #[a.register-login(href="javascript:void(0)") Login]

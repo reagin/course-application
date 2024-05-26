@@ -1,0 +1,18 @@
+html 
+    head 
+        include ../include/head.pug
+        block styles 
+            link(rel="stylesheet", href="/public/styles/global.css")
+        block scripts 
+            script(src="https://registry.npmmirror.com/crypto-js/4.2.0/files/crypto-js.js")
+            script(src="https://registry.npmmirror.com/axios/1.6.8/files/dist/axios.min.js") 
+            script(src="https://registry.npmmirror.com/jquery/3.7.1/files/dist/jquery.min.js")  
+            script(src="https://registry.npmmirror.com/sweetalert2/11.11.0/files/dist/sweetalert2.all.min.js") 
+    body 
+        block content 
+        block modules 
+            script(type="module" src="https://registry.npmmirror.com/ionicons/7.4.0/files/dist/ionicons/ionicons.esm.js")
+            script(nomodule src="https://registry.npmmirror.com/ionicons/7.4.0/files/dist/ionicons/ionicons.js")
+            script(defer src="https://registry.npmmirror.com/css-doodle/0.39.1/files/css-doodle.min.js") 
+            script(src="/public/scripts/global.js") 
+        include ../include/doodle.pug
