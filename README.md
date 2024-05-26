@@ -11,9 +11,8 @@
 ## dotenv config
 
 ```ini
-# TIPS.
-#	Please create a new database to connect.
-#   Unless you know what you are doing.
+# TIPS. Please create a new database to connect.
+#       Unless you know what you are doing.
 
 # Database Config
 DB_PORT=<<number>>
