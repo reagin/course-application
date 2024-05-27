@@ -302,7 +302,7 @@ export async function updategrade(req, res) {
 		if (!nameItem)
 			throw new Error("Update Grade Error", { cause: "Access Denied" });
 
-		if (!gradename)
+		if (!oldgradename)
 			throw new Error("Update Grade Error", { cause: "Error Value" });
 
 		await updateGrade(nameItem, oldgradename, newgradename);
