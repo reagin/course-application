@@ -1,6 +1,6 @@
 # MysqlDemo
 
-本项目是本人学习`Mysql`课程时完成的课程作业，主要使用`Express`框架和`Mysql`实现
+本项目是本人学习`Mysql`课程时完成的课程作业，主要使用`Express`框架实现
 
 ## start
 
