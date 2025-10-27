@@ -30,30 +30,28 @@ ADMIN_USER_SECRET=<<string>>
 
 ## response.status
 
--   success
-    -   `0`: `Initialize/Login/Logout/Reset/Register Success`
+- success
 
--   error
-    -   `10`: `Unknow Error`
+  - `0`: `Initialize/Login/Logout/Reset/Register Success`
 
-    -   `11`: `Access Denied`
+- error
 
-    -   `12`: `Type/Connect/Synatx/Disconnect Error`
+  - `10`: `Unknow Error`
 
-    -   `16`: `Invalid Email`
+  - `11`: `Access Denied`
 
-    -   `17`: `Invalid Password`
+  - `12`: `Type/Connect/Synatx/Disconnect Error`
 
-    -   `18`: `Invalid Code`
+  - `16`: `Invalid Email`
 
-    -   `20`: `User Already Exists`
+  - `17`: `Invalid Password`
 
--   failure
+  - `18`: `Invalid Code`
 
-    -   `51`: `Session Generate Failure`
+  - `20`: `User Already Exists`
 
-    -   `52`: `Session Destory Failure`
+- failure
 
-## LICENSE
+  - `51`: `Session Generate Failure`
 
-[MIT License](./LICENSE)
+  - `52`: `Session Destory Failure`

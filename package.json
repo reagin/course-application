@@ -1,5 +1,5 @@
 {
-	"name": "application",
+	"name": "@reagin/course-application",
 	"version": "1.0.0",
 	"type": "module",
 	"main": "./server/server.js",
